@@ -1,0 +1,278 @@
+@import "vars";
+@import "reset";
+@import "mixins";
+@import "fonts";
+@import "carousel";
+
+body{
+    font-family: $font_main;
+    background:  linear-gradient(90deg, #F0F2F3, #F9FBFA, #F5F8F8)
+}
+.title{
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    color:$text_color;
+}
+.title_1{
+    font-size: 44px;
+    line-height: 52px;
+}
+.title_2{
+    font-size: 40px;
+    line-height: 48px;
+    padding-bottom: 20px;
+}
+.title_3{
+    font-size: 32px;
+    line-height: 46px;
+}
+.title_4{
+    font-size: 24px;
+    line-height: 48px;
+}
+.text{
+    color: $text_color;
+    font-weight: 300;
+    line-height: 26px;
+}
+.header{
+    @include flex(flex,flex-start,center);
+    @include position(absolute, 30px, auto, auto, auto);
+    @include heiwid(80px, 100%);
+    padding: 0 calc(50vw - 650px);
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.25) 24%, rgba(255, 255, 255, 0) 47%), rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(5px);
+}
+.nav, .menu{
+    @include flex(flex,flex-end,baseline);
+    flex-grow: 1;
+    padding: 10px;
+    &__item{
+        margin: 0 20px
+    }
+    &__link{
+        font-family: $font_main;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        transition: 0.1s cubic-bezier(.65,.09,.81,1.64);
+    }
+    &__link:hover{
+        border-bottom: 2px solid #000;
+        text-shadow: rgb(54, 54, 54) 1px 2px 5px;
+    } 
+    &__burger,&__burger-img{
+        display: none;
+    }
+}
+.btn-theme a{
+    @include flex(flex,center,center);
+    @include heiwid(30px, 30px);
+    background-color: #262A3F;
+    opacity: 0.7;
+    transition: 0.2s ;
+    &:hover{
+        opacity: 1;
+    border-radius: 5px; 
+    }
+}
+.italic_span{
+    font-style: italic;
+    color: darkcyan;
+}
+.line{
+    width: 35%;
+    margin: 0 auto;
+    color: #85BBB1;
+}
+.main{
+    background-image: url(../img/png/header_background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.btn{
+@include button($btn_color);
+}
+.m-header{
+    padding: 0 0 550px calc(50vw - 650px);
+    @include flex(flex,center,baseline);
+    @include position(relative, 250px, auto, auto, auto);
+    flex-direction: column;
+    max-width: 44%;
+    &__text{
+        padding: 25px 0 45px 0;
+    }
+}
+.m-sales, .transfer{
+    @include flex(flex, flex-start, center);
+    padding: 0 calc(50vw - 650px) 175px calc(50vw - 650px);
+    position: relative;
+    &__image{
+        display: flex;
+        position: relative;
+    }
+}
+.info, .ainfo{
+    @include flex(flex, flex-start, flex-start);
+    @include position(absolute, 42px, auto, auto, 350px);
+    width: 910px;
+    background: rgba(255, 255, 255, 0.9);
+    &__numbers, &__advantages{
+        flex: 1 1 50%;
+    }
+    &__text{
+        flex: 1 1 50%;
+        padding: 60px 20px;
+    }
+    &__atext{
+        flex: 1 1 50%;
+        padding: 40px 20px;
+    }
+}
+.ainfo{
+    padding: 30px;
+}
+.numbers{
+    padding: 40px 40px;
+    text-align: center;
+    &__span{
+        font-family: $font_headers;
+        font-size: 68px;
+    }
+}
+.advantages{
+    text-align: start;
+    padding: 40px 40px;
+}
+.adv-btn{
+    @include flex(flex, center, baseline);
+    margin-top: 100px;
+    padding: 40px;
+    border: 1px solid #E4E4E4;
+}
+.sales-btn{
+    padding-top: 50px;
+}
+.features{
+    @include flex(flex, flex-start, baseline);
+    flex-direction: column;
+    padding: 0 calc(50vw - 650px);
+    &__dblock{
+        @include flex(flex, space-around, baseline);
+        padding-bottom: 150px;
+    }
+    &__block{
+        border-top: 1px solid #E4E4E4;
+        padding: 30px 0;
+        width: 38%;
+        max-width: 600px;
+    }
+}
+.ftext{
+    padding-top: 20px;
+}
+.comment{
+    padding: 0 calc(50vw - 650px);
+    margin-bottom: 150px;
+    &__quote{
+        @include position(absolute, 80px, auto, auto, 52px);
+    }
+    &__block{    
+        position: relative;
+        background-image: url(../img/png/quote-background.png);
+        background-size: cover;
+        padding: 100px 120px;
+    }
+    &__text *{
+        color: #fff;
+        padding-bottom: 40px;
+        max-width: 75%;
+    }
+    &__text span{
+        font-family: $font_headers;
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+.video{
+    padding: 0 calc(50vw - 650px);
+    @include flex(flex, center, center);
+    flex-direction: column;
+    &__frame{
+        @include heiwid(40vw, 75vw);
+        position: relative;
+        max-width: 1300px;
+        border: 1px solid #E4E4E4;
+        border-radius: 30px;
+        margin-bottom: 50px;
+        &::before{
+            content: '';
+            @include position(absolute, 49%, auto, auto, 2%);
+            @include heiwid(10px, 10px);
+            border: 1px solid #E4E4E4;
+            border-radius: 50%;
+        }
+        &::after{
+            content: '';
+            @include position(absolute, 48%, auto, 3%, auto);
+            @include heiwid(30px, 30px);
+            border: 1px solid #E4E4E4;
+            border-radius: 50%;
+        }
+    }
+    &__src{
+        @include position(absolute, 5%, auto, auto, 5%);
+        @include heiwid(90%, 85%);
+        border: 1px solid #E4E4E4;
+    }
+    &__info *{
+        padding-bottom: 20px;
+    }
+}
+.responsive-iframe {
+    @include position(absolute, 0, 0, 0, 0);
+    @include heiwid(100%, 100%);
+  }
+.contact{
+    @include flex(flex, space-between, baseline);
+    padding: 120px calc(50vw - 650px);
+    &__info{
+        flex: 1 1 30%;
+        max-width: 40%;
+    }
+    &__field{
+        flex: 1 1 40%;
+        display: flex;
+        flex-direction: column;
+        max-width: 40%;
+    }
+}
+.reviews{
+    padding: 60px calc(50vw - 650px);
+    @include flex(flex, space-between, center);
+    &__info{
+        margin-bottom: 50px;
+    }
+}
+.form{
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px;
+    margin-bottom: 30px;
+    resize: none;
+    background: linear-gradient(90deg, #F9FBFA, #F5F8F8);
+}
+.form::placeholder{
+    color:#262A3F;
+    font-family: $font_headers;
+    font-style: italic;
+    font-size: 18px;
+    opacity: 0.5;
+}
+.footer{
+    @include flex(flex, space-between, center);
+    padding: 20px calc(50vw - 650px);
+    &__link:first-of-type{
+        margin-right: 30px;
+    }
+}
+@import "dark";
+@import "media";

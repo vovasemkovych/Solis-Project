@@ -1,0 +1,35 @@
+.dark{
+    background:  linear-gradient(90deg, #091323, #091323, #091221)
+}
+.main-dark{
+    background-image: url(../img/png/dark_background.png);
+}
+.header-dark{
+    background: linear-gradient(270deg, #16192680 0%, #16192600 25%, #16192600 50%), #16192605;
+}
+.mi_dark a,
+.title_dark, 
+.text_dark, 
+.ns_dark, 
+.form_dark::placeholder, 
+.fdark a {
+    color:#fff;
+}
+.header-dark *{
+    color: #E4E4E4;
+}
+.mi_dark a:hover{
+    border-bottom: 2px solid #fff;
+}
+.btn_dark{
+@include button($btn_color_dark);
+}
+.dinfo{
+    background: #161926;
+}
+.form_dark{
+background:  linear-gradient(90deg, #091323, #091221);
+}
+.fdark span, .fdark p{
+    color: rgb(184, 184, 184);
+}

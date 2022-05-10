@@ -1,0 +1,47 @@
+@mixin flex($disp,$jc,$ai){
+    display: $disp;
+    justify-content: $jc;
+    align-items: $ai;
+}
+@mixin button($color){
+    position: relative;
+    color: $color;
+    font-size: 20px;
+    text-align: start;
+    width: fit-content;
+    background:rgba(255, 0, 0, 0);
+    &::after{
+        content: '';
+        position:absolute;
+        bottom: -2px;
+        left: 10px;
+        height: 15px;
+        width: 100%;
+        background: $color;
+        opacity: 0.3;
+        transition: 0.2s;
+    }
+    &:hover::after{
+        content: '';
+        position:absolute;
+        bottom: -2px;
+        left: -6px;
+        height: 28px;
+        width: 110%;
+        background: $color;
+        opacity: 0.3;
+        border-radius: 5px;
+    }
+}
+@mixin position($pos, $t, $b, $r, $l){
+    position: $pos;
+    top: $t;
+    bottom: $b;
+    right: $r;
+    left: $l;
+}
+@mixin heiwid($height, $width){
+    height: $height;
+    width: $width;
+}
+// 380 -> 287 -> 266 (position) -> 257 (heiwid) -> 251
